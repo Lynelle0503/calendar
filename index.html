@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="hero">
+        <div class="calendar">
+            <div class="date">
+                <p id="date">01</p>
+                <p id="day">Sunday</p>
+            </div>
+            <div class="month">
+                <p id="month">March</p>
+                <p id="year">1998</p>
+            </div>
+        </div>
+
+        <div class="time">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+    <script>
+        const date = document.getElementById("date");
+        const day = document.getElementById("day");
+        const month = document.getElementById("month");
+        const year = document.getElementById("year");
+
+        const today = new Date();
+
+        const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        const monthname = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        console.log(week[3])
+        date.innerHTML = (today.getDate()<10?"0":"") + today.getDate();
+        day.innerHTML = week[today.getDay()-1];
+        month.innerHTML = monthname[today.getMonth()-1];
+        year.innerHTML = today.getFullYear();
+
+
+        let hrs = document.getElementById("hrs");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+        setInterval(()=>{
+            let currentTime = new Date();
+
+            sec.innerHTML = (currentTime.getSeconds()<10?"0":"") +currentTime.getSeconds();       
+            hrs.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+            min.innerHTML = (currentTime.getMinutes()<10?"0":"") +currentTime.getMinutes();
+
+        },1000)
+        
+    </script>
+
+</body>
+</html>

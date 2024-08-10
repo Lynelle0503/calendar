@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #cda6ef, #8d8ddd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.calendar {
+    width: 300px;
+    height: 250px;
+    background:#e5e5e5;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.date, .month {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.month {
+    width: 42%;
+    background: #bed459;
+    color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 35px;
+}
+
+.month p {
+    padding: 3px;
+}
+#year{
+    color:orange;
+    font-weight:500;
+}
+
+.date {
+    width: 58%;
+}
+
+#day {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight: 500;
+}
+
+#date {
+    font-size: 100px;
+    line-height: 100px;
+}
+
+/*time */
+
+.time {
+    width: 800px;
+    min-height: 180px;
+    position: relative;
+    padding: 30px;
+}
+
+.clock {
+    width: 100%;
+    height: 100%;
+    background:rgba(235,0,255,0.11);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    color: #636262;
+}
+
+.time::before{
+    content: '';
+    width: 200px;
+    height: 200px;
+    background: #bed459;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.time::after{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: orange;
+    border-radius:50px;
+    position: absolute;
+    right: -70px;
+    bottom: -70px;
+    z-index: 0;
+}
+
+.clock span {
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.clock span::after {
+    font-size: 16px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: orange;
+    font-weight: 580;
+}
+
+#hrs::after{
+    content: 'HOURS';
+}
+#min::after{
+    content: 'MINUTES';
+}
+#sec::after{
+    content: 'SECONDS';
+}
